@@ -20,7 +20,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack{
-                // Prancing Pony
+                // Prancing Pony Image
                 Image(.prancingpony)
                     .resizable()
                     .scaledToFit()
@@ -108,3 +108,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
