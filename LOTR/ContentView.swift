@@ -52,8 +52,6 @@ struct ContentView: View {
                         // Left Text Field | Placeholder
                         TextField("Amount", text: $leftAmount)
                             .textFieldStyle(.roundedBorder)
-                        
-                        
                     }
                     // Equal Signs : System Symbols : SF symbols
                     Image(systemName: "arrow.right.arrow.left")
@@ -92,12 +90,17 @@ struct ContentView: View {
                 // info button
                 HStack{
                     Spacer()
+                    
                     Button {
                         showExchangeInfo.toggle()
                     } label:  {
                         Image(systemName: "info.circle.fill")
                             .font(.largeTitle)
                             .foregroundStyle(.white)
+                    }
+                    .padding(.trailing)
+                    .sheet(isPresented: $showExchangeInfo) {
+                        ExchangeInfo()
                     }
                 }
             }
@@ -109,3 +112,5 @@ struct ContentView: View {
     ContentView()
 }
 
+
+// Enum has Cases and Struct has properties
