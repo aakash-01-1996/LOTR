@@ -2,17 +2,19 @@
 //  Currency.swift
 //  LOTR
 //
-//  Created by Aakash Ambodkar on 11/25/24.
+//  Created by Aakash Ambodkar
 //
 import SwiftUI
 
-enum Currency: Double {
+enum Currency: Double, CaseIterable, Identifiable {
     case copperPenny = 6400
     case silverPenny = 64
     case silverPiece = 16
     case goldPenny = 4
     case goldPiece = 1
-        
+    
+    var id: Currency { self }
+    
     var image: ImageResource{
         switch self {
         case .copperPenny: .copperpenny
@@ -30,13 +32,16 @@ enum Currency: Double {
         case .silverPenny:
             "Silver Penny"
         case .silverPiece:
-            "Silver Peice"
+            "Silver Piece"
         case .goldPenny:
             "Gold Penny"
         case .goldPiece:
-            "Gold Peice3"
+            "Gold Piece"
         }
     }
 }
 // To connect these values, we need a Computed property : Value of the property is used when the property is used
+
+
+// Collections :: Array, Dictionary and Set | We also have more
 
