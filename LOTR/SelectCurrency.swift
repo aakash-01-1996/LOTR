@@ -2,14 +2,15 @@
 //  SelectCurrency.swift
 //  LOTR
 //
-//  Created by Aakash Ambodkar on 11/24/24.
+//  Created by Aakash Ambodkar
 //
 
 import SwiftUI
 
 struct SelectCurrency: View {
     @Environment(\.dismiss) var dismiss
-    @State var currency: Currency
+    @Binding var topCurrency: Currency
+    @Binding var bottomCurrency: Currency
     
     var body: some View {
         ZStack {
@@ -25,35 +26,15 @@ struct SelectCurrency: View {
                     .fontWeight(.bold)
                 
                 // Currency icons | Use LazyVGrid to set the cols
-                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                        ForEach(Currency.allCases){ currency in
-                            if self.currency == currency {
-                                CurrencyIcon(currencyImage: currency.image,
-                                             currencyName: currency.name)
-                                    .shadow(color: .black, radius: 10)
-                                    .overlay{
-                                        RoundedRectangle(cornerRadius:25)
-                                            .stroke(lineWidth: 3)
-                                            .opacity(0.5)
-                                    }
-                            } else {
-                                CurrencyIcon(currencyImage: currency.image,
-                                             currencyName: currency.name)
-                                .onTapGesture {
-                                    self.currency = currency
-                                }
-                            }
-                        }
-                    }
+                IconGrid(currency: $topCurrency)
                 
                 // Text
                 Text("Select the currency you are converting to: ")
                     .fontWeight(.bold)
+                    .padding(.top)
                 
-                // Currency icons
-                
-                
-                
+                // Currency icons | Use LazyVGrid
+                IconGrid(currency: $bottomCurrency)
                 
                 // Done button
                 Button("Done"){
@@ -67,13 +48,16 @@ struct SelectCurrency: View {
             }
             .padding()
             .multilineTextAlignment(.center)
+            .foregroundStyle(.black)
         }
     }
 }
 
 
 
-
 #Preview {
-    SelectCurrency(currency: .silverPiece)
+    @Previewable @State var topCurrency: Currency = .silverPenny
+    @Previewable @State var bottomCurrency: Currency = .goldPenny
+    
+    SelectCurrency(topCurrency: $topCurrency, bottomCurrency: $bottomCurrency)
 }
