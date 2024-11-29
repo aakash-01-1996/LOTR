@@ -39,9 +39,17 @@ enum Currency: Double, CaseIterable, Identifiable {
             "Gold Piece"
         }
     }
+    
+    func convert(amountString: String, currency: Currency) -> String {
+        guard let doubleAmount = Double(amountString) else {
+            return "Please enter a valid number."
+        }
+        
+        let convertedAmount = (doubleAmount / self.rawValue) * currency.rawValue
+        
+        return String(format: "%.2f", convertedAmount)
+    }
 }
+
 // To connect these values, we need a Computed property : Value of the property is used when the property is used
-
-
 // Collections :: Array, Dictionary and Set | We also have more
-

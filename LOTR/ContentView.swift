@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var showExchangeInfo = false
     @State var showSelectCurrency = false
+    
     @State var leftAmount = ""
     @State var rightAmount = ""
     
