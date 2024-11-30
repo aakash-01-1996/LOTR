@@ -2,7 +2,7 @@
 //  LOTRApp.swift
 //  LOTR
 //
-//  Created by Aakash Ambodkar on 9/25/24.
+//  Created by Aakash Ambodkar
 //
 
 import SwiftUI

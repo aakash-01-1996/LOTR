@@ -61,3 +61,5 @@ struct SelectCurrency: View {
     
     SelectCurrency(topCurrency: $topCurrency, bottomCurrency: $bottomCurrency)
 }
+
+// Enum has Cases and Struct has properties
