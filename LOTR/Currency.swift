@@ -51,5 +51,9 @@ enum Currency: Double, CaseIterable, Identifiable {
     }
 }
 
-// To connect these values, we need a Computed property : Value of the property is used when the property is used
-// Collections :: Array, Dictionary and Set | We also have more
+
+/* {
+Notes: 
+- To connect these values, we need a Computed property : Value of the property is used when the property is used
+- Collections :: Array, Dictionary and Set | We also have more
+ } */

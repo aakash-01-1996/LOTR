@@ -2,7 +2,7 @@
 //  CurrencyIcon.swift
 //  LOTR
 //
-//  Created by Aakash Ambodkar on 11/24/24.
+//  Created by Aakash Ambodkar
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  SelectCurrency.swift
 //  LOTR
 //
-//  Created by Aakash Ambodkar on 11/24/24.
+//  Created by Aakash Ambodkar
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ struct IconGrid: View {
     @Binding var currency: Currency
     
     var body: some View {
-        // Currency icons | Use LazyVGrid to set the cols
+       
         LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
             ForEach(Currency.allCases){ currency in
                 if self.currency == currency {
@@ -41,3 +41,8 @@ struct IconGrid: View {
     
     IconGrid(currency: $currency)
 }
+
+/* {
+Notes:
+ - Currency icons | Use LazyVGrid to set the cols
+ }*/
